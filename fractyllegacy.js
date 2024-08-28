@@ -12,7 +12,7 @@ G.AddData({
       name:'big mac',
       desc:'[big mac]s are full of [big mac sauce] and never expire.',
       icon:[0,0,'fliconsSheet'],
-      turnToByContext:{'eat':{'health':0.01,'happiness':0.03},'decay':{'big mac':1}},
+      turnToByContext:{'eat':{'health':0.01,'happiness':0.5},'decay':{'big mac':1}},
       partOf:'food',
       category:'food',
     });
@@ -20,13 +20,13 @@ G.AddData({
       name:'big mac sauce',
       desc:'Made from [bugs] and [muddy water]. For some reason, it tastes great on things other than [big mac]s.',
       icon:[1,0,'flicons'],
-      turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'hot sauce':0.95,'spoiled food':0.05}},
+      turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'big mac sauce':0.95,'spoiled food':0.05}},
       partOf:'food',
       category:'food',
     });
     
     
-    G.getDict('grass').res['gather']['big mac']=3;
+    G.getDict('grass').res['gather']['big mac sauce']=3;
       
     G.getDict('artisan').modes['big mac sauce']={name:'Make Big Mac sauce',desc:'Turn 3 [bugs] and 3 [muddy water] into 1 [big mac sauce].',req:{'mcdonalds training':true},use:{'knapped tools':1}};
       
@@ -48,7 +48,7 @@ G.AddData({
       chance:20,
       req:{'mcdonalds training':true},
       effects:[
-        {type:'function',func:function(){G.getDict('big mac').turnToByContext['eat']['happiness']=0.2;}},//this is a custom function executed when we gain the trait
+        {type:'function',func:function(){G.getDict('big mac').turnToByContext['eat']['happiness']=1;}},//this is a custom function executed when we gain the trait
       ],
     });
     

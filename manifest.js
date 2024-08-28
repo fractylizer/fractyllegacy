@@ -3,4 +3,4 @@ G.DeclareManifest({
   updates:{
     'FractylLegacy*':'https://fractylizer.github.io/fractyllegacy/fractyllegacy.js'
   }
-  });
+});
